@@ -3,87 +3,10 @@
     <style id="customRules"></style>
     <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
     <script async="" src="//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js"></script>
-    <script type="text/javascript">
-        window._currentDevice = 'desktop';
-        window.Parameters = window.Parameters || {
-            AjaxContainer: 'div.dmBody',
-            WrappingContainer: 'div.dmOuter',
-            HomeUrl: 'https://www.dettaglissima.net/',
-            AccountUUID: '9b900da801ce4bf8a77455b58643b861',
-            SystemID: 'US_DIRECT_PRODUCTION',
-            SiteAlias: '40882f5e',
-            SiteId: '2376250',
-            SiteType: atob('RFVEQU9ORQ=='),
-            PublicationDate: 'Tue Jan 25 09:32:48 UTC 2022',
-            ExternalUid: null,
-            IsSiteMultilingual: true,
-            InitialPostAlias: '',
-            InitialDynamicItem: '',
-            InitialPageAlias: 'it',
-            InitialPageUuid: '2c5e22a7bb5f482c999e280d6b326a0d',
-            InitialEncodedPageAlias: 'aXQ=',
-            CurrentPageUrl: '',
-            IsCurrentHomePage: false,
-            AllowAjax: false,
-            AfterAjaxCommand: null,
-            HomeLinkText: 'Back To Home',
-            UseGalleryModule: false,
-            CurrentThemeName: 'Layout Theme',
-            ThemeVersion: '4645',
-            DefaultPageAlias: '',
-            RemoveDID: true,
-            WidgetStyleID: null,
-            IsHeaderFixed: false,
-            IsHeaderSkinny: false,
-            IsBfs: true,
-            StorePageAlias: 'null',
-            StorePagesUrls: 'e30=',
-            IsNewStore: 'false',
-            StorePath: '',
-            StoreId: 'null',
-            StoreVersion: 0,
-            StoreBaseUrl: '',
-            StoreCleanUrl: true,
-            StoreDisableScrolling: true,
-            NotificationSubDomain: 'dettaglissima',
-            HasCustomDomain: true,
-            showCookieNotification: true,
-            cookiesNotificationMarkup: ' <div>Utilizziamo i cookie per garantire la miglior esperienza possibile sul nostro sito Web. Per maggiori informazioni, passare alla pagina della privacy.<\/div> \n',
-            translatedPageUrl: '/it',
-            isFastMigrationSite: false,
-            sidebarPosition: 'NA',
-            currentLanguage: 'it',
-            NavItems: 'W3sidGl0bGUiOiJIb21lIiwiYWxpYXMiOiJpdCIsInBhdGgiOiIvaXQiLCJpbk5hdmlnYXRpb24iOnRydWUsInN1Yk5hdiI6W119LHsidGl0bGUiOiJDaGkgc2lhbW8iLCJhbGlhcyI6Iml0L2NoaS1zaWFtbyIsInBhdGgiOiIvaXQvY2hpLXNpYW1vIiwiaW5OYXZpZ2F0aW9uIjp0cnVlLCJzdWJOYXYiOltdfSx7InRpdGxlIjoiR2FsbGVyaWEiLCJhbGlhcyI6Iml0L2dhbGxlcmlhIiwicGF0aCI6Ii9pdC9nYWxsZXJpYSIsImluTmF2aWdhdGlvbiI6dHJ1ZSwic3ViTmF2IjpbXX0seyJ0aXRsZSI6IlByZXp6aSIsImFsaWFzIjoiaXQvcHJpY2luZyIsInBhdGgiOiIvaXQvcHJpY2luZyIsImluTmF2aWdhdGlvbiI6ZmFsc2UsInN1Yk5hdiI6W119LHsidGl0bGUiOiJDb250YXR0byIsImFsaWFzIjoiaXQvY29udGF0dGFjaSIsInBhdGgiOiIvaXQvY29udGF0dGFjaSIsImluTmF2aWdhdGlvbiI6dHJ1ZSwic3ViTmF2IjpbXX1d',
-            errors: {
-                general: 'Si è verificato un errore durante la connessione alla pagina.<br /> Assicurati di essere online.',
-                password: 'Combinazione nome/password non corretta',
-                tryAgain: 'Riprova'
-            },
-            NavigationAreaParams: {
-                ShowBackToHomeOnInnerPages: true,
-                NavbarSize: 4,
-                NavbarLiveHomePage: 'https://www.dettaglissima.net/',
-                BlockContainerSelector: '.dmBody',
-                NavbarSelector: '#dmNav:has(a)',
-                SubNavbarSelector: '#subnav_main'
-            },
-            hasCustomCode: false,
-            planID: '1542',
-            customTemplateId: 'null',
-            siteTemplateId: 'null',
-            productId: 'DM_DIRECT',
-            disableTracking: false,
-            pageType: 'FROM_SCRATCH',
-            isRuntimeServer: true,
-            siteCacheKey: '1643103194497_40882f5e',
-            siteInfo: null,
-        };
-    
-        window.Parameters.LayoutID = {};
-        window.Parameters.LayoutID[window._currentDevice] = 6;
-        window.Parameters.LayoutVariationID = {};
-        window.Parameters.LayoutVariationID[window._currentDevice] = 5;
-    </script>
+    <script type="text/javascript" src="config.js"></script>
+    <script type="text/javascript" src="config2.js"></script>
+    <script type="text/javascript" src="config3.js"></script>
+    <script type="text/javascript" src="config4.js"></script>
     
     <!-- Injecting site-wide to the head -->
     
@@ -97,85 +20,7 @@
     
     <!-- ========= Meta Tags ========= -->
     <!-- PWA settings -->
-    <script>
-        function toHash(str) {
-            var hash = 5381, i = str.length;
-            while (i) {
-                hash = hash * 33 ^ str.charCodeAt(--i)
-            }
-            return hash >>> 0
-        }
-    </script>
-    <script>
-        (function(global) {
-        //const cacheKey = global.cacheKey;
-        const isOffline = 'onLine' in navigator && navigator.onLine === false;
-        const hasServiceWorkerSupport = 'serviceWorker' in navigator;
-        if (isOffline) {
-            console.log('offline mode');
-        }
-        if (!hasServiceWorkerSupport) {
-            console.log('service worker is not supported');
-        }
-        if (hasServiceWorkerSupport && !isOffline) {
-            window.addEventListener('load', function() {
-                const serviceWorkerPath = '/runtime-service-worker.js?v=2';
-                navigator.serviceWorker
-                    .register(serviceWorkerPath, { scope: './' })
-                    .then(
-                        function(registration) {
-                            // Registration was successful
-                            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                        },
-                        function(err) {
-                            // registration failed :(
-                            console.log('ServiceWorker registration failed: ', err);
-                        }
-                    )
-                    .catch(function(err) {
-                        console.log(err);
-                    });
-            });
     
-            // helper function to refresh the page
-            var refreshPage = (function() {
-                var refreshing;
-                return function() {
-                    if (refreshing) return;
-                    // prevent multiple refreshes
-                    var refreshkey = 'refreshed' + location.href;
-                    var prevRefresh = localStorage.getItem(refreshkey);
-                    if (prevRefresh) {
-                        localStorage.removeItem(refreshkey);
-                        if (Date.now() - prevRefresh < 30000) {
-                            return; // dont go into a refresh loop
-                        }
-                    }
-                    refreshing = true;
-                    localStorage.setItem(refreshkey, Date.now());
-                    console.log('refereshing page');
-                    window.location.reload();
-                };
-            })();
-    
-            function messageServiceWorker(data) {
-                return new Promise(function(resolve, reject) {
-                    if (navigator.serviceWorker.controller) {
-                        var worker = navigator.serviceWorker.controller;
-                        var messageChannel = new MessageChannel();
-                        messageChannel.port1.onmessage = replyHandler;
-                        worker.postMessage(data, [messageChannel.port2]);
-                        function replyHandler(event) {
-                            resolve(event.data);
-                        }
-                    } else {
-                        resolve();
-                    }
-                });
-            }
-        }
-    })(window);
-    </script>
     <!-- Add manifest -->
     <!-- End PWA settings -->
     
@@ -200,76 +45,8 @@
     <link rel="preconnect" href="https://lirp.cdn-website.com/" crossorigin="">
     
     <!-- render the required CSS and JS in the head section -->
-    <script>
-        window.SystemID = 'US_DIRECT_PRODUCTION';
     
-        if(!window.dmAPI) {
-            window.dmAPI = {
-                registerExternalRuntimeComponent: function() {
-                },
-                getCurrentDeviceType: function() {
-                    return window._currentDevice;
-                }
-            };
-        }
     
-        if (!window.requestIdleCallback) {
-            window.requestIdleCallback = function (fn) {
-                setTimeout(fn, 0);
-            }
-        }
-    
-        function loadCSS(link) {
-            try {
-                var urlParams = new URLSearchParams(window.location.search);
-                var noCSS = !!urlParams.get('nocss');
-                var cssTimeout = urlParams.get('cssTimeout') || 0;
-    
-                if (noCSS) {
-                    return;
-                }
-                requestIdleCallback(function () {
-                    window.setTimeout(function () {
-                        link.onload = null;
-                        link.rel = 'stylesheet';
-                        link.type = 'text/css'
-                    }, parseInt(cssTimeout, 10));
-                });
-            } catch (e) {/* Never fail - this is just a tool for measurements */}
-        }
-    
-    </script>
-    <script>
-    (function(n){"use strict";if(!n.l){n.l=function(){}}var o=loadCSS.t={};o.o=function(){var l;try{l=n.document.createElement("link").relList.supports("preload")}catch(e){l=false}return function(){return l}}();o.i=function(e){var l=e.media||"all";function enableStylesheet(){if(e.addEventListener){e.removeEventListener("load",enableStylesheet)}else if(e.attachEvent){e.detachEvent("onload",enableStylesheet)}e.setAttribute("onload",null);e.media=l}if(e.addEventListener){e.addEventListener("load",enableStylesheet)}else if(e.attachEvent){e.attachEvent("onload",enableStylesheet)}setTimeout(function(){e.rel="stylesheet";e.media="only x"});setTimeout(enableStylesheet,3e3)};o.s=function(){if(o.o()){return}var e=n.document.getElementsByTagName("link");for(var l=0;l<e.length;l++){var t=e[l];if(t.rel==="preload"&&t.getAttribute("as")==="style"&&!t.getAttribute("data-loadcss")){t.setAttribute("data-loadcss",true);o.i(t)}}};if(!o.o()){o.s();var e=n.setInterval(o.s,500);if(n.addEventListener){n.addEventListener("load",function(){o.s();n.clearInterval(e)})}else if(n.attachEvent){n.attachEvent("onload",function(){o.s();n.clearInterval(e)})}}if(typeof exports!=="undefined"){exports.l=loadCSS}else{n.l=loadCSS}})(typeof global!=="undefined"?global:this);
-    </script>
-    <style id="forceCssIncludes">
-        /* This file is auto-generated from a `scss` file with the same name */
-    
-    .videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}.dmMobileBody .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}.dmDesktopBody .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}#dm [data-show-on-page-only]{display:none!important}
-    </style>
-    
-    <!-- Google Fonts Include -->
-
-    <script>
-        function loadCSS(link) {
-            try {
-                var urlParams = new URLSearchParams(window.location.search);
-                var noCSS = !!urlParams.get('nocss');
-                var cssTimeout = urlParams.get('cssTimeout') || 0;
-    
-                if (noCSS) {
-                    return;
-                }
-                requestIdleCallback(function () {
-                    window.setTimeout(function () {
-                        link.onload = null;
-                        link.rel = 'stylesheet';
-                        link.type = 'text/css'
-                    }, parseInt(cssTimeout, 10));
-                });
-            } catch (e) {/* Never fail - this is just a tool for measurements */}
-        }
-    </script>
     
     <link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css?family=Amiko:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Poppins:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Oswald:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Source+Sans+Pro:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Droid+Serif:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Open+Sans:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&amp;subset=latin-ext&amp;display=swap">
     
