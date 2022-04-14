@@ -1,0 +1,8 @@
+.dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop="none"]),
+.dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+}
+.dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop="none"]),
+.dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+}

@@ -1,0 +1,101 @@
+    
+/* ==================================================================== */
+/*                     System Style Definitions                         */
+/* ==================================================================== */
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmContent h3,*#dm div.dmFooter h3,*#dm div.dm-title h3
+{
+	font-size:26px;
+}
+*#dm *[data-buttonstyle] div.dmInner *#site_content *.dmWidget span.text,*#dm *[data-buttonstyle] div.dmInner *#site_content *.dmformsubmit input
+{
+	font-size:21px;
+}
+*#dm div.dmContent h5,*#dm div.dmFooter h5,*#dm div.dm-title h5
+{
+	font-size:15px;
+}
+*#dm DIV.dmOuter DIV.dmInner,*#dm DIV.dmOuter DIV#dmSlideRightNavRight
+{
+	background-image:initial;
+	background-color:rgba(250,227,237,1);
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+*#dm div.dmInner,*#dm div.dmInner *.dmRespCol,*#dm *.ecwid *,*#dm *.dmform *.dmforminput label
+{
+	font-size:18px;
+}
+*#dm div.dmInner,*#dm div.dmInner *.dmRespCol,*#dm *.ecwid *,*#dm *.dmform *.dmforminput label,*.dmPrettyList *.listText,*.dmPrettyList *.itemName
+{
+	font-size:18px;
+}
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmContent h2,*#dm div.dmFooter h2,*#dm div.dm-title h2
+{
+	font-size:50px;
+}
+*#dm div.dmContent h4,*#dm div.dmFooter h4,*#dm div.dm-title h4
+{
+	font-size:16px;
+}
+*#dm *[data-buttonstyle] div.dmInner *#site_content *.dmWidget span.text,*#dm *[data-buttonstyle] div.dmInner *#site_content *.dmformsubmit input,*#dm div.dmOuter div.dmInner *.ecwid *.ecwid-btn.ecwid-btn--primary span,*#dmRoot *#dm div.dmOuter div.dmInner *.ecwid *.ecwid-btn.ecwid-btn--primary
+{
+	font-size:14px;
+}
+*#dm div.dmContent h6,*#dm div.dmFooter h6,*#dm div.dm-title h6
+{
+	font-size:14px;
+}
+*#dm div.dmContent h1,*#dm div.dmFooter h1,*#dm div.dm-title h1
+{
+	font-size:60px;
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+*#dm div.dmInner,*#dm div.dmInner *.dmRespCol,*#dm *.ecwid *,*#dm *.dmform *.dmforminput label,*.dmPrettyList *.listText,*.dmPrettyList *.itemName,*#dm *.dmRestaurantMenu *.menuItemBox,*.dmRestaurantMenu *.menuItemName,*.dmRestaurantMenu *.menuItemDesc,*.dmRestaurantMenu *.menuItemPrice,*.dmPhotoGallery p.caption-text,*.dmGeoLocation a span.dmGeoMLocItemTitle,*.dmGeoLocation a span.dmGeoMLocItemDetails
+{
+	font-size:15px;
+}
+*#dm div.dmInner,*#dm div.dmInner *.dmRespCol,*#dm *.ecwid *,*#dm *.dmform *.dmforminput label,*.dmPrettyList *.listText,*.dmPrettyList *.itemName,*#dm *.dmRestaurantMenu *.menuItemBox,*.dmRestaurantMenu *.menuItemName,*.dmRestaurantMenu *.menuItemDesc,*.dmRestaurantMenu *.menuItemPrice,*.dmPhotoGallery p.caption-text,*.dmGeoLocation a span.dmGeoMLocItemTitle,*.dmGeoLocation a span.dmGeoMLocItemDetails,*.map-popup-description
+{
+	font-size:15px;
+}
+
+/* ==================================================================== */
+/*                     Additional Style Definitions                     */
+/* ==================================================================== */
+*#dm div.dmContent h2,*#dm div.dmFooter h2,*#dm div.p_hfcontainer h2,*#dm div.dm-title h2
+{
+	font-size:40px;
+}
+*#dm div.dmContent h1,*#dm div.dmFooter h1,*#dm div.p_hfcontainer h1,*#dm div.dm-title h1
+{
+	font-size:70px;
+}
+*#dm div.dmContent h3,*#dm div.dmFooter h3,*#dm div.p_hfcontainer h3,*#dm div.dm-title h3
+{
+	font-size:30px;
+}
+*#dm div.dmContent h4,*#dm div.dmFooter h4,*#dm div.p_hfcontainer h4,*#dm div.dm-title h4
+{
+	font-size:22px;
+}
+
+/* ==================================================================== */
+/*                             Inner                                    */
+/* ==================================================================== */
+#dm div.dmInner,#dm div.dmInner .dmRespCol,#dm .dmRespCol div.dmNewParagraph,#dm .ecwid .ec-store,#dm .dmform .dmforminput label,.dmPrettyList .listText,.dmPrettyList .itemName,#dm .dmRestaurantMenu .menuItemBox,.dmRestaurantMenu .menuItemName,.dmRestaurantMenu .menuItemDesc,.dmRestaurantMenu .menuItemPrice,.dmPhotoGallery .caption-text.caption-text,.dmGeoLocation a span.dmGeoMLocItemTitle,.dmGeoLocation a span.dmGeoMLocItemDetails,.map-popup-description
+{
+	font-size:15px;
+}

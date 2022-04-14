@@ -4,28 +4,89 @@
 <head>
     <style id="customRules"></style>
     <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-    <script async="" src="//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js"></script>
-    <script type="text/javascript" src="config.js"></script>
-    <script type="text/javascript" src="config2.js"></script>
-    <script type="text/javascript" src="config3.js"></script>
-    <script type="text/javascript" src="config4.js"></script>
+    <script async="" src="js/jsTracker.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/UtilsJs.js"></script>
+    <script type="text/javascript" src="js/config3.js"></script>
+    <script type="text/javascript" src="js/config4.js"></script>
     
-    <!-- Injecting site-wide to the head -->
-
-
-
-
-    <!-- End Injecting site-wide to the head -->
-
-    <!-- Inject secured cdn script -->
-
+    <!-- SERVICE WORKER -->
+    <script>
+        (function(global) {
+        //const cacheKey = global.cacheKey;
+        const isOffline = 'onLine' in navigator && navigator.onLine === false;
+        const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+        if (isOffline) {
+            console.log('offline mode');
+        }
+        if (!hasServiceWorkerSupport) {
+            console.log('service worker is not supported');
+        }
+        if (hasServiceWorkerSupport && !isOffline) {
+            window.addEventListener('load', function() {
+                const serviceWorkerPath = '/runtime-service-worker.js?v=2';
+                navigator.serviceWorker
+                    .register(serviceWorkerPath, { scope: './' })
+                    .then(
+                        function(registration) {
+                            // Registration was successful
+                            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                        },
+                        function(err) {
+                            // registration failed :(
+                            console.log('ServiceWorker registration failed: ', err);
+                        }
+                    )
+                    .catch(function(err) {
+                        console.log(err);
+                    });
+            });
+    
+            // helper function to refresh the page
+            var refreshPage = (function() {
+                var refreshing;
+                return function() {
+                    if (refreshing) return;
+                    // prevent multiple refreshes
+                    var refreshkey = 'refreshed' + location.href;
+                    var prevRefresh = localStorage.getItem(refreshkey);
+                    if (prevRefresh) {
+                        localStorage.removeItem(refreshkey);
+                        if (Date.now() - prevRefresh < 30000) {
+                            return; // dont go into a refresh loop
+                        }
+                    }
+                    refreshing = true;
+                    localStorage.setItem(refreshkey, Date.now());
+                    console.log('refereshing page');
+                    window.location.reload();
+                };
+            })();
+    
+            function messageServiceWorker(data) {
+                return new Promise(function(resolve, reject) {
+                    if (navigator.serviceWorker.controller) {
+                        var worker = navigator.serviceWorker.controller;
+                        var messageChannel = new MessageChannel();
+                        messageChannel.port1.onmessage = replyHandler;
+                        worker.postMessage(data, [messageChannel.port2]);
+                        function replyHandler(event) {
+                            resolve(event.data);
+                        }
+                    } else {
+                        resolve();
+                    }
+                });
+            }
+        }
+    })(window);
+    </script>
 
     <!-- ========= Meta Tags ========= -->
     <!-- PWA settings -->
     
     <!-- Add manifest -->
     <!-- End PWA settings -->
-
 
     <meta http-equiv="Content-type" content="text/html;charset=utf-8">
     <meta charset="utf-8">
@@ -49,8 +110,6 @@
 
     <!-- render the required CSS and JS in the head section -->
     
-    
-    
     <link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css?family=Amiko:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Poppins:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Oswald:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Source+Sans+Pro:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Droid+Serif:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic|Open+Sans:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&amp;subset=latin-ext&amp;display=swap">
     
     <!-- RT CSS Include d-css-runtime-desktop-one-package-new-->
@@ -63,13 +122,15 @@
         href="https://irp.cdn-website.com/WIDGET_CSS/production_2320/d8f25ef8ae55ff452a738635a95dc9d5.css"
         id="widgetCSS">
 
-    <link rel="stylesheet" href="header.css">
-
-    <link rel="stylesheet" href="headerDevice.css">
-
-    <link rel="stylesheet" href="pagestyle.css">
-
-    <link rel="stylesheet" href="pagestyleDevice.css">
+    <link rel="stylesheet" href="css/forceCssIncludes.css">
+    <link rel="stylesheet" href="css/hideAnimFix.css">
+    <link rel="stylesheet" href="css/criticalCss.css">
+    <link rel="stylesheet" href="css/genericStyle.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/headerDevice.css">
+    <link rel="stylesheet" href="css/pagestyle.css">
+    <link rel="stylesheet" href="css/pagestyleDevice.css">
+    
 
     <!-- This is populated in Ajax navigation 
     <style id="pageAdditionalWidgetsCss" type="dettaglissima/css">
@@ -2371,7 +2432,7 @@
                 }; p[i].q = p[i].q || []; n = l.createElement(o); g = l.getElementsByTagName(o)[0]; n.async = 1;
                 n.src = w; g.parentNode.insertBefore(n, g)
             }
-        }(window, document, "script", "//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js", "snowplow"));
+        }(window, document, "script", "js/jsTracker.js", "snowplow"));
         window.dmsnowplow = window.snowplow;
 
         dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
